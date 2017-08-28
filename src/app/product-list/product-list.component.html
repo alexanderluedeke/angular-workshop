@@ -1,0 +1,7 @@
+<div *ngFor="let product of products">
+  <a [routerLink]="['/products', product.id]">{{product.title}}</a>
+</div>
+
+<br/><br/>
+
+<a [routerLink]="['new']">New product</a>

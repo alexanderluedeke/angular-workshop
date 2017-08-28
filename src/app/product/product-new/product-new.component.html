@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(this.form)">
+  <input type="text" formControlName="title">
+  <div [hidden]="!form.hasError('required',['title'])">
+    Title is required
+  </div><br/><br/>
+  <button type="submit" [disabled]="!form.valid">
+    Submit
+  </button>
+</form>
+
+
+<a [routerLink]="['..']">Zur&uuml;ck</a>

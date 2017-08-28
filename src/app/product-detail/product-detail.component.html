@@ -1,0 +1,11 @@
+<p *ngIf="product" else elseBlock>
+  {{product.title}} for {{product.price | prettyCurrency: '$'}} price with id = {{product.id}} <br /><br />
+
+  <img src="{{product.image}}"> <br /><br />
+
+  <a [routerLink]="['edit']">Edit {{product.title}}</a>
+</p>
+
+<br /><br />
+
+<a [routerLink]="['..']">Zur&uuml;ck</a>

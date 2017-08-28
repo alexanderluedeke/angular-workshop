@@ -1,0 +1,30 @@
+<div *ngIf="product">
+  <H3>Preview</H3>
+  Title : {{product.title}} <br/><br/>
+
+  <H3>Edit</H3>
+  <form #form="ngForm" (ngSubmit)="save()">
+    <input required type="text" [(ngModel)]="product.id" name="id" #id="ngModel" label="id">
+    <div [hidden]="!id.errors?.required || id.pristine">
+      Id is required
+    </div><br/><br/>
+
+    <input required type="text" [(ngModel)]="product.price" name="price" #price="ngModel" label="price">
+    <div [hidden]="!price.errors?.required || price.pristine">
+      Price is required
+    </div><br/><br/>
+
+    <input required type="text" [(ngModel)]="product.title" name="title" #title="ngModel" label="title">
+    <div [hidden]="!title.errors?.required || title.pristine">
+      Title is required
+    </div><br/><br/>
+
+    <button type="submit" [disabled]="!form.valid">
+      Submit
+    </button>
+  </form>
+
+  <br/><br/>
+
+  <a [routerLink]="['..']">Zur&uuml;ck</a>
+</div>
